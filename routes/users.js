@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const plm = require('passport-local-mongoose');
 
 mongoose.connect("mongodb://127.0.0.1:27017/pinterestDb")
 
@@ -15,5 +16,8 @@ const userSchema = mongoose.Schema({
     default:[]
   }
 })
+
+// giving passport serialize and deserialize user
+userSchema.plugin(plm)
 
 module.exports = mongoose.model("user",userSchema)
