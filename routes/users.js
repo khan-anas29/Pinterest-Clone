@@ -1,9 +1,19 @@
-var express = require('express');
-var router = express.Router();
+const mongoose = require('mongoose');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+mongoose.connect("mongodb://127.0.0.1:27017/pinterestDb")
 
-module.exports = router;
+// User Schema - things which will required for user
+const userSchema = mongoose.Schema({
+  name: String,
+  username: String,
+  email: String,
+  password: String,
+  contact: Number,
+  profileImage: String,
+  boards: {
+    type: Array,
+    default:[]
+  }
+})
+
+module.exports = mongoose.model("user",userSchema)
