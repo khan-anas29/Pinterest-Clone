@@ -8,4 +8,4 @@
 "/delete:pinid" - to delete pins
 "/logout" 
 "/edit"
- "/upload"
+"/upload"
