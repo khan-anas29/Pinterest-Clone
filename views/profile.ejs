@@ -1,15 +1,24 @@
 <% include ./partials/header.ejs %>
 
 <div class="profile w-full min-h-screen text-white bg-gray-900 pt-1">
+    <form id="uploadform" hidden action="/fileupload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image">
+    </form>
+
     <!-- Profile Image -->
     <div class="prof-dets flex flex-col items-center mt-10">
-        <div class="w-24 h-24 rounded-full bg-white overflow-hidden">
-            <img src="https://i.pinimg.com/736x/c4/ca/36/c4ca3673102e03b8bebf6a0c5125a381.jpg" alt="" class="w-full h-full object-center object-cover">
+        <div class="relative ">
+            <span id="uploadimage" class="absolute w-6 h-6 right-0 bottom-0 bg-gray-500 rounded-full flex justify-center items-center">
+                <i class="text-white text-xs font-semibold ri-edit-line"></i>
+            </span>
+            <div class="w-24 h-24 rounded-full bg-white overflow-hidden">
+                <img src="https://i.pinimg.com/736x/c4/ca/36/c4ca3673102e03b8bebf6a0c5125a381.jpg" alt="" class="w-full h-full object-center object-cover">
+            </div>
         </div>
         <h1 class="font-semibold text-lg ">Anas Khan</h1>
         <h1 class="font-semibold text-xs ">@username</h1>
         <a href="/edit" class="px-7 py-1 mt-1 text-xs font-semibold bg-gray-300 rounded-full hover:bg-gray-600">Edit</a>
-        <button class="px-7 py-1 mt-1 text-xs font-semibold bg-red-500 rounded-full hover:bg-red-800">Add New Post</button>
+        <button class="px-7 py-1 mt-1 text-xs font-semibold bg-red-500 rounded-md hover:bg-red-800">Add New Post</button>
 
     </div>
 
@@ -25,5 +34,17 @@
         </div>
     </div>
 </div>
+
+<script>
+    // Accessing the form
+    document.querySelector("#uploadimage").addEventListener("click",function(){
+        document.querySelector("#uploadform input").click()
+    })
+    // submitting the form when image is changing
+    document.querySelector("#uploadform input").addEventListener("change",function(){
+        document.querySelector("#uploadform").submit()
+    })
+
+</script>
 
 <% include ./partials/footer.ejs %>
