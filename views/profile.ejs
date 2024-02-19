@@ -27,10 +27,10 @@
     <div class="cards flex flex-wrap gap-10 px-10 mt-2">
         <div class="card">
             <div class="w-40 h-28 bg-white rounded-lg overflow-hidden" >
-                <img src="https://i.pinimg.com/736x/1d/0a/a2/1d0aa2874143cb8b3219d7149fa82e3e.jpg" alt="" class="object-cover w-full h-full ">
+                <img src="/images/uploads/<%= user.pins[0].image%>" alt="" class="object-cover w-full h-full ">
             </div>
-            <h3 class="font-semibold text-sm mt-5">All Pins</h3>
-            <h5 class="font-medium text-xs opacity-80">2000 Pins</h5>
+            <h3 class="font-semibold text-sm mt-5">Your Pins</h3>
+            <h5 class="font-medium text-xs opacity-80"><%= user.pins.lenght %> Pins</h5>
         </div>
     </div>
 </div>

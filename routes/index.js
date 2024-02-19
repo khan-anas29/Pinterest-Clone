@@ -22,7 +22,10 @@ router.get('/register', function(req, res, next) {
 // Profile Page
 router.get("/profile",isLoggedIn,async function (req,res,next) { 
    // getting user
-   const user= await userModel.findOne({username: req.session.passport.user})
+   const user= 
+   await userModel
+   .findOne({username: req.session.passport.user})
+   .populate("pins") //show actual number of pins
   res.render("profile",{user,nav:true})
 });
 
