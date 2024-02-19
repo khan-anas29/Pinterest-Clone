@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const userModel = require('./users');
+const pinsModel = require('./pins');
 const passport = require('passport');
 const localStrategy = require('passport-local')
 const upload = require('./multer');
@@ -36,7 +37,7 @@ router.get("/addpost",isLoggedIn,async function (req,res,next) {
 router.post("/createpin",isLoggedIn,upload.single("pinPost"),async function (req,res,next) { 
    // getting user
    const user= await userModel.findOne({username: req.session.passport.user})
-  res.render("addpost",{user,nav:true})
+
 });
 
 // FileUpload for Profile Photo

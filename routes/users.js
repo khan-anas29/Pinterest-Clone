@@ -14,7 +14,13 @@ const userSchema = mongoose.Schema({
   boards: {
     type: Array,
     default:[]
-  }
+  },
+  pins:[
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref:"pins"
+    }
+  ]
 })
 
 // giving passport serialize and deserialize user
