@@ -36,8 +36,19 @@ router.get("/addpost",isLoggedIn,async function (req,res,next) {
 // Create New Post Form
 router.post("/createpin",isLoggedIn,upload.single("pinPost"),async function (req,res,next) { 
    // getting user
-   const user= await userModel.findOne({username: req.session.passport.user})
-
+   const user= await userModel.findOne({username: req.session.passport.user});
+   const pin = await pinsModel.create({
+    // Pins schema : Values to link from where
+    user: user._id,
+    title: req.body.pinTitle,
+    description: req.body.pinDes,
+    image: req.file.filename
+   });
+   
+  //  push the pin in user schema
+  user.pins.push(pin._id);
+  await user.save()
+  res.redirect("/profile")
 });
 
 // FileUpload for Profile Photo
