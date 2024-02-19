@@ -14,4 +14,4 @@ const pinsSchema = mongoose.Schema({
 })
 
 
-module.exports = mongoose.model("pins",userSchema)
+module.exports = mongoose.model("pins",pinsSchema)
