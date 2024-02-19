@@ -27,7 +27,7 @@
     <div class="cards flex flex-wrap gap-10 px-10 mt-2">
         <div class="card">
             <div class="w-40 h-28 bg-white rounded-lg overflow-hidden" >
-                <img src="/images/uploads/<%= user.pins[0].image%>" alt="" class="object-cover w-full h-full ">
+                <img src="/images/uploads/<%= user?.pins[0]?.image%>" alt="" class="object-cover w-full h-full ">
             </div>
             <h3 class="font-semibold text-sm mt-5">Your Pins</h3>
             <h5 class="font-medium text-xs opacity-80"><%= user.pins.lenght %> Pins</h5>
