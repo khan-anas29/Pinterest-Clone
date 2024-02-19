@@ -25,7 +25,14 @@ router.get("/profile",isLoggedIn,async function (req,res,next) {
   res.render("profile",{user,nav:true})
 });
 
-// FileUpload
+// Create New Post
+router.get("/addpost",isLoggedIn,async function (req,res,next) { 
+   // getting user
+   const user= await userModel.findOne({username: req.session.passport.user})
+  res.render("addpost",{user,nav:true})
+});
+
+// FileUpload for Profile Photo
 router.post("/fileupload",isLoggedIn,upload.single("image"), async function (req,res,next) { 
   // getting user
   const user= await userModel.findOne({username: req.session.passport.user})
