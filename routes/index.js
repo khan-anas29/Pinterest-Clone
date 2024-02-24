@@ -36,6 +36,7 @@ router.get("/show/pins",isLoggedIn,async function (req,res,next) {
    const user= 
    await userModel
    .findOne({username: req.session.passport.user})
+   .populate("pins") //show actual number of pins
   res.render("show",{user,nav:true})
 });
 
