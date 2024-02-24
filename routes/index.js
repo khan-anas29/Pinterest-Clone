@@ -29,6 +29,16 @@ router.get("/profile",isLoggedIn,async function (req,res,next) {
   res.render("profile",{user,nav:true})
 });
 
+
+// Your Pins Page
+router.get("/show/pins",isLoggedIn,async function (req,res,next) { 
+   // getting user
+   const user= 
+   await userModel
+   .findOne({username: req.session.passport.user})
+  res.render("show",{user,nav:true})
+});
+
 // Create New Post
 router.get("/addpost",isLoggedIn,async function (req,res,next) { 
    // getting user

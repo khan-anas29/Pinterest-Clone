@@ -29,8 +29,8 @@
             <div class="w-40 h-28 bg-white rounded-lg overflow-hidden" >
                 <img src="/images/uploads/<%= user?.pins[0]?.image%>" alt="" class="object-cover w-full h-full ">
             </div>
-            <h3 class="font-semibold text-sm mt-5">Your Pins</h3>
-            <h5 class="font-medium text-xs opacity-80"> <%= user.pins.length %> Pins</h5>
+            <a href="/show/pins" class="font-semibold text-sm mt-5">Your Pins</a>
+            <h5 class="font-medium text-xs opacity-60"> <%= user.pins.length %> Pins</h5>
         </div>
     </div>
 </div>
