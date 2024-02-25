@@ -40,6 +40,17 @@ router.get("/show/pins",isLoggedIn,async function (req,res,next) {
   res.render("show",{user,nav:true})
 });
 
+// Feed Page
+router.get("/feed",isLoggedIn,async function (req,res,next) { 
+   const user=await userModel
+   .findOne({username: req.session.passport.user})
+   const allpins= await pinsModel
+   .find()
+   .populate("user")
+
+  res.render("feed",{user,allpins,nav:true})
+});
+
 // Create New Post
 router.get("/addpost",isLoggedIn,async function (req,res,next) { 
    // getting user
@@ -82,7 +93,8 @@ router.post('/register', function(req, res, next) {
     // right side: register.ejs
     username: req.body.username,
     email: req.body.email,
-    contact: req.body.contact
+    contact: req.body.contact,
+    name: req.body.fullname
   });
 
   // registering by authenticate
