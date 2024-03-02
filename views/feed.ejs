@@ -5,9 +5,9 @@
         <% allpins.forEach(function(elem){ %>
             <div class="card w-24 flex flex-col gap-1 items-center justify-center">
                 <div class="w-full h-32 rounded-lg overflow-hidden">
-                    <img src="/images/uploads/<%=elem.image%>" alt="" class="object-cover w-full h-full ">
+                    <a href="/postdetail"><img src="/images/uploads/<%=elem.image%>" alt="" class="object-cover w-full h-full "></a>
                 </div>
-                <a href="#" class="text-xs font-semibold"><%= elem.title %> </a>
+                <a href="/postdetail" class="text-xs font-semibold"><%= elem.title %> </a>
                 <a href="#" class="text-xs font-semibold opacity-50"><%= elem.user.username%> </a>
             </div>
         <% }) %>

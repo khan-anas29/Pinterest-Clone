@@ -5,9 +5,9 @@
         <% user.pins.forEach(function(elem){ %>
             <div class="card w-24">
                 <div class="w-full h-32 rounded-lg overflow-hidden">
-                    <img src="/images/uploads/<%=elem.image%>" alt="" class="object-cover w-full h-full ">
+                    <a href="/postdetail"><img src="/images/uploads/<%=elem.image%>" alt="" class="object-cover w-full h-full "></a>
                 </div>
-                <a href="#" class="mt-2 text-xs font-semibold"><%= elem.title %> </a>
+                <a href="/postdetail" class="mt-2 text-xs font-semibold"><%= elem.title %> </a>
             </div>
         <% }) %>
     </div>

@@ -51,6 +51,14 @@ router.get("/feed",isLoggedIn,async function (req,res,next) {
   res.render("feed",{user,allpins,nav:true})
 });
 
+// Pin Detail Page
+
+// Feed Page
+router.get("/postdetail",isLoggedIn,async function (req,res,next) { 
+ res.render("postdetail",{nav:true})
+});
+
+
 // Create New Post
 router.get("/addpost",isLoggedIn,async function (req,res,next) { 
    // getting user
