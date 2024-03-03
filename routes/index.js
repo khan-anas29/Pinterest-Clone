@@ -53,8 +53,8 @@ router.get("/feed",isLoggedIn,async function (req,res,next) {
 
 // Pin Detail Page
 
-// Feed Page
 router.get("/postdetail",isLoggedIn,async function (req,res,next) { 
+
  res.render("postdetail",{nav:true})
 });
 
