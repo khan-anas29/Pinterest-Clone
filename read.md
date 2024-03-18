@@ -9,3 +9,6 @@
 "/logout" 
 "/edit"
 "/upload"
+
+## Note
+# I have not uploaded the Node Modules kindly install the dependecies that are present in package.json file
